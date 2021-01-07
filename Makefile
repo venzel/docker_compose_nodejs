@@ -1,5 +1,10 @@
 include .env
 
+.PHONY: setup
+
+setup:
+	sh ./scripts/create.sh
+
 .PHONY: up
 
 up:

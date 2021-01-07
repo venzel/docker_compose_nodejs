@@ -1,10 +1,12 @@
+require('dotenv').config()
+
 db.createUser({
-  user: 'behappy',
-  pwd: 'queijo',
+  user: process.env.DB_MONGO_USER,
+  pwd: process.env.DB_MONGO_PASSWORD,
   roles: [
     {
       role: 'readWrite',
-      db: 'behappy',
+      db: process.env.DB_MONGO_NAME,
     },
   ],
 })
