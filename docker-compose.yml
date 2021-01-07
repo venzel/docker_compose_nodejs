@@ -30,6 +30,14 @@ services:
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
       - ./data/mongodb:/data/db
 
+  redis:
+    container_name: redis-${PROJECT_NAME}
+    image: redis:alpine
+    restart: always
+    ports:
+      - ${DB_REDIS_PORT}:6379
+    command: redis-server --requirepass ${DB_REDIS_PASSWORD}
+
   api:
     container_name: api-${PROJECT_NAME}
     image: node:latest
@@ -39,6 +47,7 @@ services:
     depends_on:
       - mongo
       - postgres
+      - redis
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
     volumes:

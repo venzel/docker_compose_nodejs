@@ -4,6 +4,7 @@
 
 - https://hashinteractive.com/blog/docker-compose-up-with-postgres-quick-tips/
 - https://medium.com/faun/managing-mongodb-on-docker-with-docker-compose-26bf8a0bbae3
+- https://renatogroffe.medium.com/docker-dica-r%C3%A1pida-criando-uma-inst%C3%A2ncia-do-redis-via-docker-compose-961c7eca5255
 
 ### Executa
 
@@ -31,4 +32,14 @@ $ mongo -u <user_name> --authenticationDatabase <database_name>
 
 ```
 mongodb://<user_name>:<password>@<host>:<port>/<database_name>
+```
+
+## Git
+
+### Remover trackeamento de um ou todos (.) os arquivos
+
+#### Documentacao: https://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/
+
+```bash
+$ git rm -r --cached .
 ```
